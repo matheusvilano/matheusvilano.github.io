@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matheus Vilano - Game Developer specializing in Technical Design, Software Engineering, Audio Systems, and Development Tools">
+    <meta name="keywords" content="game developer, technical designer, software engineer, game audio, Wwise, Unreal Engine, Unity, C++, Python">
+    <meta property="og:title" content="Matheus Vilano - Game Developer">
+    <meta property="og:description" content="Technical Designer & Software Engineer focused on audio systems, asset pipelines, and gameplay tools">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.matheusvilano.com/">
+    <title>Matheus Vilano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-particles" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">MV</span>
+                <span class="logo-click-effect"></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#code" class="nav-link">Code</a></li>
+                <li><a href="#talks" class="nav-link">Talks</a></li>
+                <li><a href="#music" class="nav-link">Music</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="MATHEUS VILANO">MATHEUS VILANO</h1>
+            </div>
+            <div class="hero-subtitle">GAME DEVELOPER</div>
+            <div class="hero-flow">
+                <span class="flow-item">Technical Design</span>
+                <span class="flow-plus">+</span>
+                <span class="flow-item">Software Engineering</span>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">10+</span>
+                    <span class="stat-label">Years of Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">5+</span>
+                    <span class="stat-label">Titles Shipped</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">3+</span>
+                    <span class="stat-label">Industry Talks</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="resources/about-me/matheus-vilano.jpg" alt="Matheus Vilano" class="profile-photo">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="lead">
+                        I'm <strong>Matheus Vilano</strong>, a <strong>Game Developer</strong> based in Vancouver. My primary roles are Technical Design and Software Engineering, with a focus on audio behaviours, asset pipelines, gameplay systems, and development tools - I love multidisciplinary work.
+                    </p>
+                    <p>
+                        Most recently, I shipped <strong>Baldur's Gate 3</strong> and <strong>Moss: The Forgotten Relic</strong>. I also teach game development, where I've built courses on Unreal and Unity for both designers and engineers - teaching sharpened my communication and taught me the value of robust documentation early on.
+                    </p>
+                    <p>
+                        In my free time I build open-source projects, like Wwise tools or Unreal plugins. My most popular FOSS project is <strong>PyWwise</strong>, a Wwise Authoring API wrapper for Python I still actively maintain. Anything at the intersection of arts, design, and engineering piques my interest - so for games, talks, and more, keep exploring!
+                    </p>
+                    <div class="skills-carousel">
+                        <button class="carousel-btn prev" aria-label="Previous category">‹</button>
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="skill-category">
+                                <h4>Programming & Scripting</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">C</span>
+                                    <span class="skill-tag">C++</span>
+                                    <span class="skill-tag">C#</span>
+                                    <span class="skill-tag">Go</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Lua</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">Blueprints</span>
+                                    <span class="skill-tag">Verse</span>
+                                    <span class="skill-tag">GDScript</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>Markup & Data</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">HTML</span>
+                                    <span class="skill-tag">XML</span>
+                                    <span class="skill-tag">XAML</span>
+                                    <span class="skill-tag">JSON</span>
+                                    <span class="skill-tag">TOML</span>
+                                    <span class="skill-tag">PO</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>Game Engines</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Unreal</span>
+                                    <span class="skill-tag">Godot</span>
+                                    <span class="skill-tag">Unity</span>
+                                    <span class="skill-tag">LÖVE</span>
+                                    <span class="skill-tag">Proprietary</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>Audio Tools</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Wwise</span>
+                                    <span class="skill-tag">FMOD</span>
+                                    <span class="skill-tag">GameSynth</span>
+                                    <span class="skill-tag">REAPER</span>
+                                    <span class="skill-tag">Bitwig Studio</span>
+                                    <span class="skill-tag">Pro Tools</span>
+                                    <span class="skill-tag">Logic Pro</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>Dev Tools</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Git LFS 2</span>
+                                    <span class="skill-tag">P4 Helix Core</span>
+                                    <span class="skill-tag">TeamCity</span>
+                                    <span class="skill-tag">Jenkins</span>
+                                    <span class="skill-tag">Visual Studio</span>
+                                    <span class="skill-tag">Rider</span>
+                                    <span class="skill-tag">CLion</span>
+                                    <span class="skill-tag">PyCharm</span>
+                                    <span class="skill-tag">GoLand</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>Collab Tools</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Jira</span>
+                                    <span class="skill-tag">Confluence</span>
+                                    <span class="skill-tag">Miro</span>
+                                    <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">Slack</span>
+                                    <span class="skill-tag">Notion</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="skill-category">
+                                <h4>AI Workflows</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Orchestration</span>
+                                    <span class="skill-tag">Agents</span>
+                                    <span class="skill-tag">Skills</span>
+                                    <span class="skill-tag">Tools</span>
+                                    <span class="skill-tag">MCP</span>
+                                    <span class="skill-tag">Training</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" aria-label="Next category">›</button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="resources/about-me/matheus-vilano.pdf" class="btn btn-primary" download>Download Resume</a>
+                        <a href="mailto:matheus.game354@passfwd.com" class="btn btn-primary">Send E-Mail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games" id="games">
+        <div class="container">
+            <h2 class="section-title">Featured Games</h2>
+            
+            <div class="games-carousel">
+                <button class="carousel-btn prev" aria-label="Previous game">‹</button>
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="game-card featured">
+                            <div class="game-content">
+                                <div class="game-info">
+                                    <div class="game-badge">BLOCKBUSTER HIT</div>
+                                    <h3>Baldur's Gate 3</h3>
+                                    <p class="game-role"><strong>Role:</strong> Technical Designer</p>
+                                    <p class="game-focus"><strong>Focus:</strong> Asset Pipelines, Gameplay Systems, Dev Tools</p>
+                                    <p class="game-description">
+                                        A Dungeons & Dragons tactical role-playing game that redefined the CRPG genre with unprecedented depth and polish.
+                                    </p>
+                                    <ul class="achievements-list">
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Architected and maintained core gameplay audio systems</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Collaborated with other departments to create audio-driven systems</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Enhanced the gameplay abilities system with multi-stage modular sound</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Documented dozens of tools and systems used by programmers and designers</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Conducted all audio Dolby Atmos mixing sessions as the appointed Tech Designer</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Redesigned the audio asset pipeline to simplify designers' workflows</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Planned enhancements for future projects based on developer feedback</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="game-media">
+                                    <div class="game-trailer">
+                                        <iframe
+                                            src="https://www.youtube.com/embed/XuCfkgaaa08"
+                                            title="Baldur's Gate 3 Trailer"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="game-gallery" data-gallery>
+                                        <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+                                        <div class="gallery-track">
+                                            <div class="gallery-slide active">
+                                                <img src="resources/games/bg3/screenshot-1.jpg" alt="Baldur's Gate 3 screenshot 1">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/bg3/screenshot-2.jpg" alt="Baldur's Gate 3 screenshot 2">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/bg3/screenshot-3.jpg" alt="Baldur's Gate 3 screenshot 3">
+                                            </div>
+                                        </div>
+                                        <button class="gallery-btn next" aria-label="Next image">›</button>
+                                        <div class="gallery-dots"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="game-card featured">
+                            <div class="game-content">
+                                <div class="game-info">
+                                    <div class="game-badge">INDIE LEGEND</div>
+                                    <h3>Moss: The Forgotten Relic</h3>
+                                    <p class="game-role"><strong>Role:</strong> Technical Designer & Software Engineer</p>
+                                    <p class="game-focus"><strong>Focus:</strong> Asset Pipelines, Gameplay Systems, Dev Tools</p>
+                                    <p class="game-description">
+                                        A story-driven puzzle-platformer game that pushed the boundaries of interactive storytelling and immersive audio design.
+                                    </p>
+                                    <ul class="achievements-list">
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Authored a modular audio authoring tool for sound designers</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Designed an AI-driven pipeline for UI icons</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Automated the assignment of audio events for data objects</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Implemented custom camera-driven audio listener behaviours</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Modernized the studio's localization pipeline for both audio and text</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Created a custom Fade-In integration for screenwriters</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Deployed audio optimizations for multiple platforms</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Re-mixed the game audio using remote mixing technologies</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="game-media">
+                                    <div class="game-trailer">
+                                        <iframe
+                                            src="https://www.youtube.com/embed/EMwWsAGASXE"
+                                            title="Moss: The Forgotten Relic Trailer"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="game-gallery" data-gallery>
+                                        <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+                                        <div class="gallery-track">
+                                            <div class="gallery-slide active">
+                                                <img src="resources/games/moss/screenshot-1.jpg" alt="Moss: The Forgotten Relic screenshot 1">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/moss/screenshot-2.jpg" alt="Moss: The Forgotten Relic screenshot 2">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/moss/screenshot-3.jpg" alt="Moss: The Forgotten Relic screenshot 3">
+                                            </div>
+                                        </div>
+                                        <button class="gallery-btn next" aria-label="Next image">›</button>
+                                        <div class="gallery-dots"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="game-card featured">
+                            <div class="game-content">
+                                <div class="game-info">
+                                    <div class="game-badge">ICONIC EXPERIENCE</div>
+                                    <h3>Until Dawn (2025)</h3>
+                                    <p class="game-role"><strong>Role:</strong> Technical Designer</p>
+                                    <p class="game-focus"><strong>Focus:</strong> Asset Pipelines, Gameplay Systems, Dev Tools</p>
+                                    <p class="game-description">
+                                        A cinematic, choice-driven horror adventure remake where every decision can mean the difference between life and death for the young cast stranded on Blackwood Mountain.
+                                    </p>
+                                    <ul class="achievements-list">
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Sourced and trained Technical Designers for the audio team</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Defined version control workflows and asset pipelines for the Technical Audio team</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Evaluated partners' tech stacks to identify gaps and suggest enhancements</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Defined standards and conventions for audio middleware usage</span>
+                                        </li>
+                                        <li>
+                                            <span class="achievement-icon">✓</span>
+                                            <span>Provided feedback on the audio mixing and mastering processes</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="game-media">
+                                    <div class="game-trailer">
+                                        <iframe
+                                            src="https://www.youtube.com/embed/8nApBGPy0ao"
+                                            title="Until Dawn Trailer"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="game-gallery" data-gallery>
+                                        <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+                                        <div class="gallery-track">
+                                            <div class="gallery-slide active">
+                                                <img src="resources/games/until-dawn/screenshot-1.jpg" alt="Until Dawn screenshot 1">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/until-dawn/screenshot-2.jpg" alt="Until Dawn screenshot 2">
+                                            </div>
+                                            <div class="gallery-slide">
+                                                <img src="resources/games/until-dawn/screenshot-3.jpg" alt="Until Dawn screenshot 3">
+                                            </div>
+                                        </div>
+                                        <button class="gallery-btn next" aria-label="Next image">›</button>
+                                        <div class="gallery-dots"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next game">›</button>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-carousel">
+                <button class="carousel-btn prev" aria-label="Previous testimonial">‹</button>
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="testimonials-slide-content">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    Matheus' skills span the entire game audio tech spectrum, from system level C++ programming, thru object oriented scripting [...], along with an encyclopedic understanding of game audio authoring tools such as Wwise and FMOD. Add to this his grounding in audio engineering [...] and the result is a unicorn among unicorns.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/guy-whitmore.jpg" alt="Guy Whitmore" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Guy Whitmore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    Matheus understands both the creative and the technical, and he moves through those worlds effortlessly. [...] On a personal level, he's just someone I trust. He's easy to talk to, quick to collaborate, and never brings ego into the room. He's phenomenal at knowledge sharing and growing those around him. He is one of the most impressive force multipliers that I've ever worked with.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/kristen-quinn.jpg" alt="Kristen Quinn" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Kristen Quinn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonials-slide-content">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    It was such a pleasure to have someone like Matheus on board that could make new-to-me concepts easy to understand and quickly help guide our systems, tools, and workflow improvement to make life easier on the audio team [...]. He's a master at what he does.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/todd-helsley.jpg" alt="Todd Helsley" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Todd Helsley</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    Matheus embodies a hard and soft skillset that allows him to cover a wide range of roles proficiently. I've been pleasantly surprised when peeking into his creative skill set and his gameplay and backend programmers skills, which opens up a one-person band for any team needs.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/giorgio-vezzini.jpg" alt="Giorgio Vezzini" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Giorgio Vezzini</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonials-slide-content">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    My experience working with Matheus has been hugely enjoyable and educational. [...] Providing leadership and guidance, maintaining and encouraging best practices, taking ownership of technical implementations, debugging problems, helping others with technical issues, and doing it all with a smile. There's really not much more one could ask for in a colleague.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/sean-soraghan.jpg" alt="Sean Soraghan" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Sean Soraghan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="testimonial-text">
+                                    Matheus has a relentless positive attitude that is infectious and makes hard work more pleasant. On top of that he is incredibly knowledgeable and passionate about everything Wwise, game audio, and scripting; I think he's the biggest Wwise power-user that I know.
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="resources/testimonials/matthew-rosen.jpg" alt="Matthew Rosen" class="author-avatar-img">
+                                    <div class="author-info">
+                                        <span class="author-name">Matthew Rosen</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next testimonial">›</button>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section class="code" id="code">
+        <div class="container">
+            <h2 class="section-title">Code Samples</h2>
+            <div class="code-content">
+                <div class="code-highlight">
+                    <h3>PyWwise: WAAPI Made Pythonic</h3>
+                    <p class="code-description">
+                        My most popular FOSS repository - a Wwise Authoring API wrapper for Python that I still actively maintain.
+                    </p>
+                    <div class="code-preview">
+                        <pre><code><span class="code-comment"># PyWwise Example</span>
+<span class="code-keyword">from</span> pywwise <span class="code-keyword">import</span> WwiseConnection, ELogSeverity, ELogChannel
+
+<span class="code-keyword">with</span> WwiseConnection() <span class="code-keyword">as</span> ak:
+    message = <span class="code-string">"Hello, Wwise!"</span>
+    severity = ELogSeverity.MESSAGE
+    channel = ELogChannel.GENERAL
+    ak.wwise.core.log.add_item(message, severity, channel)</code></pre>
+                    </div>
+                    <div class="code-links">
+                        <a href="https://www.audiokinetic.com/en/community/blog/pywwise-waapi-made-pythonic/" target="_blank" class="btn btn-primary">Read Article</a>
+                        <a href="https://github.com/MatheusVilano/PyWwise" target="_blank" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="code-projects">
+                    <div class="code-highlight">
+                        <h3>OhFi: Bitcrusher and Downsampler</h3>
+                        <p>A Wwise effect plugin for bitcrushing and downsampling.</p>
+                        <div class="code-links">
+                            <a href="https://github.com/matheusvilano/ohfi" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="code-highlight">
+                        <h3>ReaXtension: REAPER Extension Template</h3>
+                        <p>A CMake template for developing C/C++ extensions for Cockos REAPER.</p>
+                        <div class="code-links">
+                            <a href="https://github.com/matheusvilano/reaxtension" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talks Section -->
+    <section class="talks" id="talks">
+        <div class="container">
+            <h2 class="section-title">Industry Talks</h2>
+            <div class="talks-carousel">
+                <button class="carousel-btn prev" aria-label="Previous talk">‹</button>
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="talks-slide-content">
+                            <a class="talk-card" href="https://www.youtube.com/watch?v=_lpxf9OJkG4" target="_blank">
+                                <div class="talk-date">2025</div>
+                                <div class="talk-info">
+                                    <h4>Developer Experience: The UX of Development Tools</h4>
+                                    <p class="talk-event">Full Indie Summit</p>
+                                    <p>How to create effective, efficient, and engaging game development tools by prioritizing user experience.</p>
+                                </div>
+                                <span class="talk-watch">▶ Watch</span>
+                            </a>
+                            <a class="talk-card" href="https://www.youtube.com/live/LlaRuoT15kc" target="_blank">
+                                <div class="talk-date">2024</div>
+                                <div class="talk-info">
+                                    <h4>Mixing Baldur's Gate 3 with Wwise</h4>
+                                    <p class="talk-event">Audiokinetic's Wwise Up On Air</p>
+                                    <p>An overview of the collaborative workflow, technical strategies, and the use of Wwise to mix the audio for Baldur's Gate 3.</p>
+                                </div>
+                                <span class="talk-watch">▶ Watch</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="talks-slide-content">
+                            <a class="talk-card" href="https://www.youtube.com/watch?v=QAYKMExPBAA" target="_blank">
+                                <div class="talk-date">2024</div>
+                                <div class="talk-info">
+                                    <h4>Baldur's Gate 3: A Tactical Approach to a Fantastical Mix</h4>
+                                    <p class="talk-event">Interactive Audio Montreal</p>
+                                    <p>An overview of technical and creative audio challenges faced during the development of Baldur's Gate 3.</p>
+                                </div>
+                                <span class="talk-watch">▶ Watch</span>
+                            </a>
+                            <a class="talk-card" href="https://youtu.be/8OpPd0iKCKE" target="_blank">
+                                <div class="talk-date">2024</div>
+                                <div class="talk-info">
+                                    <h4>Loudness Standards in Game Audio</h4>
+                                    <p class="talk-event">Full Indie Meetup</p>
+                                    <p>The importance of consistent loudness standards in game audio.</p>
+                                </div>
+                                <span class="talk-watch">▶ Watch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next talk">›</button>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section class="music" id="music">
+        <div class="container">      <h2 class="section-title">Published Music</h2>
+            <div class="music-carousel">
+                <button class="carousel-btn prev" aria-label="Previous album">‹</button>
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <div class="album-card">
+                            <div class="album-player" data-album="sidequest">
+                                <div class="album-header">
+                                    <img class="album-art" src="https://i.ytimg.com/vi/8r1EP7VnDQA/mqdefault.jpg" alt="">
+                                    <div class="album-info">
+                                        <div class="album-title">Sidequest</div>
+                                        <div class="album-artist">Lonyeld</div>
+                                    </div>
+                                    <a class="album-yt" href="https://www.youtube.com/playlist?list=OLAK5uy_npveUwyNfL2tvz4ApiDCdBRwpi8iHRItk" target="_blank" rel="noopener" aria-label="Listen on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.57 20" width="20" height="14" fill="currentColor" aria-hidden="true"><path d="M27.97 3.12A3.58 3.58 0 0 0 25.45.6C23.22 0 14.29 0 14.29 0S5.35 0 3.12.6A3.58 3.58 0 0 0 .6 3.12 37.4 37.4 0 0 0 0 10a37.4 37.4 0 0 0 .6 6.88 3.58 3.58 0 0 0 2.52 2.52c2.23.6 11.17.6 11.17.6s8.94 0 11.17-.6a3.58 3.58 0 0 0 2.51-2.52A37.4 37.4 0 0 0 28.57 10a37.4 37.4 0 0 0-.6-6.88ZM11.43 14.29V5.71L18.93 10l-7.5 4.29Z"/></svg></a>
+                                </div>
+                                <ol class="album-tracklist"></ol>
+                                <div class="album-controls">
+                                    <button class="album-btn album-prev" aria-label="Previous track">&#9198;</button>
+                                    <button class="album-btn album-play" aria-label="Play">&#9654;</button>
+                                    <button class="album-btn album-next" aria-label="Next track">&#9197;</button>
+                                    <div class="album-progress" aria-label="Seek"><div class="album-progress-bar"></div></div>
+                                    <span class="album-time">0:00 / 0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="album-card">
+                            <div class="album-player" data-album="solstice">
+                                <div class="album-header">
+                                    <img class="album-art" src="https://i.ytimg.com/vi/tx7reyyCQsI/mqdefault.jpg" alt="">
+                                    <div class="album-info">
+                                        <div class="album-title">Solstice</div>
+                                        <div class="album-artist">Lonyeld</div>
+                                    </div>
+                                    <a class="album-yt" href="https://www.youtube.com/playlist?list=OLAK5uy_k-HnrfiT4kF6necKf_2nE0WbgHdwQcq5I" target="_blank" rel="noopener" aria-label="Listen on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.57 20" width="20" height="14" fill="currentColor" aria-hidden="true"><path d="M27.97 3.12A3.58 3.58 0 0 0 25.45.6C23.22 0 14.29 0 14.29 0S5.35 0 3.12.6A3.58 3.58 0 0 0 .6 3.12 37.4 37.4 0 0 0 0 10a37.4 37.4 0 0 0 .6 6.88 3.58 3.58 0 0 0 2.52 2.52c2.23.6 11.17.6 11.17.6s8.94 0 11.17-.6a3.58 3.58 0 0 0 2.51-2.52A37.4 37.4 0 0 0 28.57 10a37.4 37.4 0 0 0-.6-6.88ZM11.43 14.29V5.71L18.93 10l-7.5 4.29Z"/></svg></a>
+                                </div>
+                                <ol class="album-tracklist"></ol>
+                                <div class="album-controls">
+                                    <button class="album-btn album-prev" aria-label="Previous track">&#9198;</button>
+                                    <button class="album-btn album-play" aria-label="Play">&#9654;</button>
+                                    <button class="album-btn album-next" aria-label="Next track">&#9197;</button>
+                                    <div class="album-progress" aria-label="Seek"><div class="album-progress-bar"></div></div>
+                                    <span class="album-time">0:00 / 0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="album-card">
+                            <div class="album-player" data-album="voicemail">
+                                <div class="album-header">
+                                    <img class="album-art" src="https://i.ytimg.com/vi/RWpcdp4Cn_M/mqdefault.jpg" alt="">
+                                    <div class="album-info">
+                                        <div class="album-title">Voicemail</div>
+                                        <div class="album-artist">Lonyeld</div>
+                                    </div>
+                                    <a class="album-yt" href="https://www.youtube.com/playlist?list=OLAK5uy_lMERzHt8WBHWRCCdkUJh-pDY73mWUNMsg" target="_blank" rel="noopener" aria-label="Listen on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.57 20" width="20" height="14" fill="currentColor" aria-hidden="true"><path d="M27.97 3.12A3.58 3.58 0 0 0 25.45.6C23.22 0 14.29 0 14.29 0S5.35 0 3.12.6A3.58 3.58 0 0 0 .6 3.12 37.4 37.4 0 0 0 0 10a37.4 37.4 0 0 0 .6 6.88 3.58 3.58 0 0 0 2.52 2.52c2.23.6 11.17.6 11.17.6s8.94 0 11.17-.6a3.58 3.58 0 0 0 2.51-2.52A37.4 37.4 0 0 0 28.57 10a37.4 37.4 0 0 0-.6-6.88ZM11.43 14.29V5.71L18.93 10l-7.5 4.29Z"/></svg></a>
+                                </div>
+                                <ol class="album-tracklist"></ol>
+                                <div class="album-controls">
+                                    <button class="album-btn album-prev" aria-label="Previous track">&#9198;</button>
+                                    <button class="album-btn album-play" aria-label="Play">&#9654;</button>
+                                    <button class="album-btn album-next" aria-label="Next track">&#9197;</button>
+                                    <div class="album-progress" aria-label="Seek"><div class="album-progress-bar"></div></div>
+                                    <span class="album-time">0:00 / 0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="album-card">
+                            <div class="album-player" data-album="primavera">
+                                <div class="album-header">
+                                    <img class="album-art" src="https://i.ytimg.com/vi/_AsdqrRQDVg/mqdefault.jpg" alt="">
+                                    <div class="album-info">
+                                        <div class="album-title">Primavera</div>
+                                        <div class="album-artist">Dolphinkids</div>
+                                    </div>
+                                    <a class="album-yt" href="https://www.youtube.com/playlist?list=OLAK5uy_nBAz2JvTyf9wpmFD_zSmwC-Ff3fLvJxM4" target="_blank" rel="noopener" aria-label="Listen on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.57 20" width="20" height="14" fill="currentColor" aria-hidden="true"><path d="M27.97 3.12A3.58 3.58 0 0 0 25.45.6C23.22 0 14.29 0 14.29 0S5.35 0 3.12.6A3.58 3.58 0 0 0 .6 3.12 37.4 37.4 0 0 0 0 10a37.4 37.4 0 0 0 .6 6.88 3.58 3.58 0 0 0 2.52 2.52c2.23.6 11.17.6 11.17.6s8.94 0 11.17-.6a3.58 3.58 0 0 0 2.51-2.52A37.4 37.4 0 0 0 28.57 10a37.4 37.4 0 0 0-.6-6.88ZM11.43 14.29V5.71L18.93 10l-7.5 4.29Z"/></svg></a>
+                                </div>
+                                <ol class="album-tracklist"></ol>
+                                <div class="album-controls">
+                                    <button class="album-btn album-prev" aria-label="Previous track">&#9198;</button>
+                                    <button class="album-btn album-play" aria-label="Play">&#9654;</button>
+                                    <button class="album-btn album-next" aria-label="Next track">&#9197;</button>
+                                    <div class="album-progress" aria-label="Seek"><div class="album-progress-bar"></div></div>
+                                    <span class="album-time">0:00 / 0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next album">›</button>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Interested in collaborating? Have questions about my work? 
+                    Feel free to reach out - I'm always open to discussing new opportunities and exciting projects.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:matheus.game354@passfwd.com" class="contact-card">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.943a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 6.476a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>matheus.game354@passfwd.com</p>
+                    </a>
+                    <a href="https://linkedin.com/in/matheusvilano" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect on LinkedIn</p>
+                    </a>
+                    <a href="https://github.com/matheusvilano" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check my repositories</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">MV</span>
+                    <p>Matheus Vilano</p>
+                    <p class="footer-tagline">Game Developer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#games">Games</a>
+                    <a href="#code">Code</a>
+                    <a href="#talks">Talks</a>
+                    <a href="#music">Music</a>
+                </div>
+                <div class="footer-social">
+                    <a href="mailto:matheus.game354@passfwd.com" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.943a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 6.476a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/matheusvilano" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                    </a>
+                    <a href="https://github.com/MatheusVilano" target="_blank" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Matheus Vilano. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
