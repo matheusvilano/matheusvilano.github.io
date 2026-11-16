@@ -866,7 +866,8 @@ section {
    GAMES SECTION
 ======================================== */
 .games {
-    background: var(--bg-secondary);
+    /* EXPERIMENT: no section background, so the animated grid/particles show through */
+    /* background: var(--bg-secondary); */
 }
 
 .game-card {
@@ -1073,7 +1074,8 @@ section {
    TESTIMONIALS SECTION
 ======================================== */
 .testimonials {
-    background: var(--bg-primary);
+    /* EXPERIMENT: transparent to reveal grid/particles */
+    /* background: var(--bg-primary); */
 }
 
 .testimonials-slide-content {
@@ -1159,7 +1161,8 @@ section {
    CODE SECTION
 ======================================== */
 .code {
-    background: var(--bg-secondary);
+    /* EXPERIMENT: transparent to reveal grid/particles */
+    /* background: var(--bg-secondary); */
 }
 
 .code-content {
@@ -1357,7 +1360,8 @@ section {
    MUSIC SECTION
 ======================================== */
 .music {
-    background: var(--bg-secondary);
+    /* EXPERIMENT: transparent to reveal grid/particles */
+    /* background: var(--bg-secondary); */
 }
 
 .music-carousel {
@@ -1629,7 +1633,8 @@ section {
    CONTACT SECTION
 ======================================== */
 .contact {
-    background: var(--bg-primary);
+    /* EXPERIMENT: transparent to reveal grid/particles */
+    /* background: var(--bg-primary); */
 }
 
 .contact-text {
