@@ -1989,6 +1989,29 @@ section {
         text-align: left;
     }
 
+    /* Hero role labels: keep both on a single row on phones */
+    .hero {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .hero-flow {
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+    }
+
+    .flow-item {
+        min-width: 0;
+        font-size: clamp(0.55rem, 2.8vw, 0.75rem);
+        padding: 0.45rem 0.4rem;
+        letter-spacing: 0.2px;
+    }
+
+    .flow-plus {
+        font-size: 0.8rem;
+        margin: 0 0.1rem;
+    }
+
     /* Demo Reels: tighten the reel card for small screens */
     .reel-card {
         padding: var(--spacing-sm);
