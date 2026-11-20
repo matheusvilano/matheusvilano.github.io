@@ -105,9 +105,9 @@ class Particle {
     }
     
     reset() {
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
         this.size = Math.random() * 2 + 1;
+        this.x = Math.random() * Math.max(0, window.innerWidth - this.size);
+        this.y = Math.random() * Math.max(0, window.innerHeight - this.size);
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
         this.opacity = Math.random() * 0.5 + 0.2;
@@ -128,11 +128,13 @@ class Particle {
         this.x += this.speedX;
         this.y += this.speedY;
         
-        // Wrap around screen
-        if (this.x < 0) this.x = window.innerWidth;
-        if (this.x > window.innerWidth) this.x = 0;
-        if (this.y < 0) this.y = window.innerHeight;
-        if (this.y > window.innerHeight) this.y = 0;
+        // Wrap around screen (keeping particles fully inside the viewport)
+        const maxX = Math.max(0, window.innerWidth - this.size);
+        const maxY = Math.max(0, window.innerHeight - this.size);
+        if (this.x < 0) this.x = maxX;
+        if (this.x > maxX) this.x = 0;
+        if (this.y < 0) this.y = maxY;
+        if (this.y > maxY) this.y = 0;
     }
     
     draw() {
@@ -315,7 +317,10 @@ function parallaxEffect() {
     if (bgGrid) {
         const moveX = currentX * 20;
         const moveY = currentY * 20;
-        bgGrid.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        // Move the pattern instead of transforming the element: a transform on a
+        // fixed, negative-z-index element can extend the scrollable area and makes
+        // the grid disappear on iOS Safari.
+        bgGrid.style.backgroundPosition = `${moveX}px ${moveY}px`;
     }
     
     requestAnimationFrame(parallaxEffect);

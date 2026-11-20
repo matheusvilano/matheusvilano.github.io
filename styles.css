@@ -99,6 +99,22 @@ body {
     opacity: 1;
 }
 
+/* Never allow horizontal scrolling (mobile Safari needs this on both html and body).
+   `clip` is preferred where supported because it does not create a scroll container,
+   so it will not break position: sticky descendants. */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+}
+
 /* Hide body initially, show when loaded */
 body:not(.loaded) {
     opacity: 1;
@@ -106,27 +122,23 @@ body:not(.loaded) {
 
 /* ========================================
    BACKGROUND EFFECTS
-======================================== */
+======================================= */
 .bg-grid {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image: 
         linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
+    overflow: hidden;
     z-index: -2;
     pointer-events: none;
 }
 
 .bg-particles {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    overflow: hidden;
     z-index: -1;
     pointer-events: none;
 }
