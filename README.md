@@ -44,9 +44,10 @@ This repository hosts Matheus Vilano's website, which contains his dev portfolio
 4. **Testimonials** - Industry endorsements
 5. **Code** - Open source projects and repositories
 6. **Talks** - Teaching and speaking engagements
-7. **Music** - Creative audio work
-8. **Contact** - Multiple contact methods
-9. **Footer** - Navigation and social links
+7. **Reels** - Demo reels and video showcases
+8. **Music** - Creative audio work
+9. **Contact** - Multiple contact methods
+10. **Footer** - Navigation and social links
 
 ## Technologies Used
 

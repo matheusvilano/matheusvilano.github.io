@@ -207,7 +207,7 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
         '.section-title, .game-card, .testimonial-card, .talk-card, .contact-card, ' +
-        '.code-highlight, .album-card, .stat-item, .skill-category, ' +
+        '.code-highlight, .album-card, .reel-card, .stat-item, .skill-category, ' +
         '.about-text, .about-cta, .hero-stats, .hero-flow, .contact-text, .contact-methods'
     );
 
@@ -817,6 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel('.testimonials-carousel');
     initCarousel('.games-carousel');
     initCarousel('.talks-carousel');
+    initCarousel('.reels-carousel');
     initCarousel('.music-carousel');
     
     // Initialize game galleries
