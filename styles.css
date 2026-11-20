@@ -2095,10 +2095,55 @@ section {
         padding: var(--spacing-sm);
     }
     
-    .about-cta,
     .hero-cta {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* About: keep Download Resume and Send E-Mail side by side */
+    .about-cta {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .about-cta .btn {
+        flex: 1 1 0;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        line-height: 1.25;
+        white-space: normal;
+    }
+
+    /* Contact: keep Email, LinkedIn, and GitHub on one row */
+    .contact-methods {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .contact-card {
+        padding: var(--spacing-sm) 0.4rem;
+    }
+
+    .contact-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .contact-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
     }
     
     .btn {
@@ -2210,6 +2255,30 @@ section {
 
     .game-content {
         padding: var(--spacing-sm);
+    }
+
+    /* Contact: tighten the three-up row on small phones */
+    .contact-card {
+        padding: 0.6rem 0.25rem;
+    }
+
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .contact-card p {
+        font-size: 0.62rem;
+    }
+
+    .about-cta .btn {
+        padding: 0.7rem 0.3rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.3px;
     }
 }
 
