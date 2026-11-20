@@ -1924,6 +1924,7 @@ section {
 @media (max-width: 768px) {
     :root {
         --mobile-section-title-size: clamp(1.1rem, 6.4vw, 2.4rem);
+        --mobile-carousel-dots-outset: 24px;
     }
 
     /* Keep the longest section titles on one line without clipping. */
@@ -2026,7 +2027,7 @@ section {
     }
 
     .carousel .carousel-dots {
-        bottom: -24px;
+        bottom: calc(-1 * var(--mobile-carousel-dots-outset));
         gap: 0;
     }
 
@@ -2249,6 +2250,16 @@ section {
     
     section {
         padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    /* Tighten section-to-section spacing without changing the hero or footer gaps. */
+    section:not(.hero) + section {
+        padding-top: calc(var(--spacing-lg) - var(--spacing-sm));
+    }
+
+    /* Reserve only the space used by pagination at the end of a section. */
+    section > .container > .carousel:last-child {
+        margin-bottom: var(--mobile-carousel-dots-outset);
     }
 }
 
