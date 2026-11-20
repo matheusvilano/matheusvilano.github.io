@@ -1462,6 +1462,7 @@ section > .container > .carousel:last-child {
     margin-top: var(--spacing-sm);
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    white-space: nowrap;
 }
 
 /* ========================================
@@ -2147,6 +2148,12 @@ section > .container > .carousel:last-child {
         gap: var(--spacing-sm);
     }
 
+    /* Scale the reel labels to fit narrow cards without clipping. */
+    .reel-title {
+        font-size: min(1.2rem, 3.55vw);
+        letter-spacing: min(1.5px, 0.07em);
+    }
+
     /* Games */
     .games-carousel,
     .games-carousel .carousel-track {
@@ -2321,10 +2328,6 @@ section > .container > .carousel:last-child {
     /* Demo Reels: tighten the reel card for small screens */
     .reel-card {
         padding: var(--spacing-sm);
-    }
-
-    .reel-title {
-        font-size: 1rem;
     }
 
     /* Published Music: tighten the album player for small screens */
