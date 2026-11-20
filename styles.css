@@ -1185,7 +1185,8 @@ section {
 
 .code-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* minmax(0, 1fr) so long code lines can't force the track wider than the viewport */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--spacing-lg);
 }
 
@@ -1198,6 +1199,9 @@ section {
     /* Flex column so buttons can pin to the bottom-right of the card */
     display: flex;
     flex-direction: column;
+    /* Allow the grid item to shrink below its content width (pre blocks) */
+    min-width: 0;
+    max-width: 100%;
 }
 
 .code-highlight:hover {
@@ -1223,6 +1227,8 @@ section {
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     overflow-x: auto;
+    /* Let the code block scroll horizontally instead of widening the card */
+    min-width: 0;
 }
 
 .code-preview code {
@@ -1248,6 +1254,9 @@ section {
 .code-projects {
     display: grid;
     gap: var(--spacing-md);
+    /* Allow this grid item to shrink below its content width */
+    min-width: 0;
+    max-width: 100%;
 }
 
 /* ========================================
@@ -1902,7 +1911,9 @@ section {
     }
     
     .code-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        /* Match the gap between the OhFi / ReaXtension cards below */
+        gap: var(--spacing-md);
     }
     
     .talks-carousel {
@@ -2159,9 +2170,34 @@ section {
         text-align: center;
     }
 
-    /* Code Samples: allow button groups to stack on narrow screens */
+    /* Code Samples: keep the paired buttons on a single row on mobile */
     .code-links {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .code-links .btn {
+        flex: 1;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        padding: 0.75rem 0.4rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.2px;
+        line-height: 1.25;
+        /* Wraps gracefully on very narrow phones instead of overflowing */
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Code Samples: smaller code font on mobile so lines fit better */
+    .code-preview {
+        padding: var(--spacing-sm);
+    }
+
+    .code-preview code {
+        font-size: 0.78rem;
     }
     
     section {
