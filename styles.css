@@ -1922,10 +1922,36 @@ section {
 }
 
 @media (max-width: 768px) {
-    /* Section titles: scale with the viewport so every heading fits on one line
-       (longest titles like "PUBLISHED MUSIC" / "FEATURED GAMES" are the constraint) */
+    :root {
+        --mobile-section-title-size: clamp(1.1rem, 6.4vw, 2.4rem);
+    }
+
+    /* Keep the longest section titles on one line without clipping. */
     .section-title {
-        font-size: clamp(1.1rem, 6.4vw, 2.4rem);
+        font-size: var(--mobile-section-title-size);
+        letter-spacing: min(4px, 1vw);
+    }
+
+    /* Card titles sit one step below the section titles. */
+    .game-info h3,
+    .code-highlight h3 {
+        font-size: clamp(1.05rem, 5.4vw, 1.5rem);
+    }
+
+    .logo-text,
+    .quote-icon,
+    .talk-date,
+    .gallery-btn {
+        font-size: clamp(1.1rem, 5.8vw, 1.5rem);
+    }
+
+    /* The hero name stays the masthead; its subtitle follows the section scale. */
+    .hero-subtitle {
+        font-size: min(var(--mobile-section-title-size), clamp(1.5rem, 4vw, 3rem));
+    }
+
+    .footer-logo {
+        font-size: clamp(1rem, 5.2vw, 1.35rem);
     }
 
     .nav-toggle {
@@ -1965,7 +1991,7 @@ section {
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: clamp(1.1rem, 5.8vw, 2rem);
     }
 
     .stat-label {
@@ -2224,10 +2250,6 @@ section {
 
     .stat-item {
         padding: 0.6rem 0.35rem;
-    }
-
-    .stat-number {
-        font-size: 1.6rem;
     }
 
     .stat-label {
