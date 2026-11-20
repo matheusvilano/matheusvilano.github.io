@@ -2104,12 +2104,27 @@ section {
 
     .testimonial-card {
         padding: var(--spacing-sm);
+        flex-direction: column;
+        align-items: stretch;
         gap: var(--spacing-sm);
+    }
+
+    .testimonial-author {
+        flex-direction: row;
+    }
+
+    .testimonial-text {
+        padding-right: 0;
     }
 
     .author-avatar-img {
         width: 56px;
         height: 56px;
+    }
+
+    .author-name {
+        text-align: left;
+        margin-top: 0;
     }
 
     /* Talks */
