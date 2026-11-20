@@ -209,7 +209,7 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
         '.section-title, .game-card, .testimonial-card, .talk-card, .contact-card, ' +
-        '.code-highlight, .album-card, .reel-card, .stat-item, .skill-category, ' +
+        '.code-highlight, .album-card, .reel-card, .image-frame, .stat-item, .skill-category, ' +
         '.about-text, .about-cta, .hero-stats, .hero-flow, .contact-text, .contact-methods'
     );
 
