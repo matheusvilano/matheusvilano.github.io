@@ -39,7 +39,10 @@
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
-    
+
+    /* Layout */
+    --navbar-height: 98px;
+
     /* Typography */
     --font-display: 'Orbitron', sans-serif;
     --font-body: 'Rajdhani', sans-serif;
@@ -85,6 +88,7 @@ a *, button *, .btn *, [role="button"] * {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height);
     font-size: 16px;
 }
 
@@ -325,6 +329,8 @@ body:not(.loaded) {
     justify-content: center;
     align-items: center;
     padding: var(--spacing-xl) var(--spacing-md);
+    /* Keep the fixed header from covering the hero content */
+    padding-top: calc(var(--navbar-height) + var(--spacing-sm));
     position: relative;
     text-align: center;
 }
