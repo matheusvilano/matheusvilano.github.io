@@ -1960,12 +1960,138 @@ section {
         max-width: clamp(180px, 55vw, 260px);
     }
     
-    .testimonials-slide-content {
-        grid-template-columns: 1fr;
+    /* ========================================
+       MOBILE CAROUSELS
+       Full-width slides, swipe navigation, and larger dot targets
+    ======================================== */
+    .carousel {
+        gap: 0;
     }
 
+    .carousel > .carousel-btn {
+        display: none;
+    }
+
+    .carousel .carousel-track {
+        touch-action: pan-y;
+    }
+
+    .carousel .carousel-slide {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .carousel .carousel-dots {
+        bottom: -24px;
+        gap: 0;
+    }
+
+    .carousel .carousel-dot {
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel .carousel-dot::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(99, 102, 241, 0.35);
+        transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .carousel .carousel-dot:hover {
+        background: transparent;
+    }
+
+    .carousel .carousel-dot:hover::before {
+        background: var(--color-primary-light);
+    }
+
+    .carousel .carousel-dot.active {
+        background: transparent;
+        transform: none;
+    }
+
+    .carousel .carousel-dot.active::before {
+        background: var(--color-primary);
+        transform: scale(1.4);
+        box-shadow: 0 0 8px rgba(99, 102, 241, 0.7);
+    }
+
+    /* Skills: compact card with pill tags */
+    .skills-carousel {
+        margin-bottom: calc(var(--spacing-md) + 20px);
+    }
+
+    .skills-carousel .carousel-slide {
+        padding: 0.85rem 0.7rem;
+        background: var(--bg-card);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: var(--radius-md);
+        justify-content: center;
+    }
+
+    .skill-category h4 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+        gap: 0.3rem;
+    }
+
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 0.22rem 0.55rem;
+        border-radius: 999px;
+    }
+
+    /* Testimonials */
+    .testimonials-slide-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .testimonial-card {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .author-avatar-img {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Talks */
     .talks-slide-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .talk-card {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    /* Games */
+    .games-carousel,
+    .games-carousel .carousel-track {
+        min-height: 0;
+    }
+
+    .game-content {
+        padding: var(--spacing-md);
+    }
+
+    /* Music */
+    .album-card {
+        padding: var(--spacing-sm);
     }
     
     .about-cta,
@@ -2079,6 +2205,10 @@ section {
     .games-carousel .carousel-track {
         min-height: 0;
         height: auto;
+    }
+
+    .game-content {
+        padding: var(--spacing-sm);
     }
 }
 

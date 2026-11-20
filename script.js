@@ -766,6 +766,54 @@ function initCarousel(containerSelector) {
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
 
+        // Touch swipe navigation (horizontal only, so vertical scrolling still works)
+        if (track) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchDeltaX = 0;
+            let isSwiping = false;
+
+            track.addEventListener('touchstart', (e) => {
+                if (e.touches.length !== 1) return;
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchDeltaX = 0;
+                isSwiping = false;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                if (e.touches.length !== 1) return;
+                const deltaX = e.touches[0].clientX - touchStartX;
+                const deltaY = e.touches[0].clientY - touchStartY;
+
+                if (!isSwiping) {
+                    if (Math.abs(deltaY) > 10 && Math.abs(deltaY) > Math.abs(deltaX)) {
+                        return;
+                    }
+                    if (Math.abs(deltaX) > 10) {
+                        isSwiping = true;
+                    }
+                }
+
+                if (isSwiping) {
+                    touchDeltaX = deltaX;
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            track.addEventListener('touchend', () => {
+                if (isSwiping && Math.abs(touchDeltaX) > 40) {
+                    if (touchDeltaX < 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                isSwiping = false;
+                touchDeltaX = 0;
+            });
+        }
+
         // Initialize heights and carousel
         syncSlideHeights();
         updateCarousel();
