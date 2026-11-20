@@ -2187,7 +2187,7 @@ section {
     }
 
     .contact-card h3 {
-        font-size: clamp(0.85rem, 4.4vw, 1.15rem);
+        font-size: clamp(0.8rem, 4.2vw, 1.1rem);
         margin-bottom: 0;
         line-height: 1.2;
     }
