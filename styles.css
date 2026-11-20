@@ -835,13 +835,22 @@ section {
     transform: none;
 }
 
+.carousel {
+    --carousel-dots-outset: 22px;
+}
+
+/* Reserve only the space used by pagination at the end of a section. */
+section > .container > .carousel:last-child {
+    margin-bottom: var(--carousel-dots-outset);
+}
+
 .carousel-dots {
     display: flex;
     justify-content: center;
     gap: 0.4rem;
     width: 100%;
     position: absolute;
-    bottom: -22px;
+    bottom: calc(-1 * var(--carousel-dots-outset));
     left: 0;
 }
 
@@ -1924,7 +1933,6 @@ section {
 @media (max-width: 768px) {
     :root {
         --mobile-section-title-size: clamp(1.1rem, 6.4vw, 2.4rem);
-        --mobile-carousel-dots-outset: 24px;
     }
 
     /* Keep the longest section titles on one line without clipping. */
@@ -2010,6 +2018,7 @@ section {
        Full-width slides, swipe navigation, and larger dot targets
     ======================================== */
     .carousel {
+        --carousel-dots-outset: 24px;
         gap: 0;
     }
 
@@ -2027,7 +2036,6 @@ section {
     }
 
     .carousel .carousel-dots {
-        bottom: calc(-1 * var(--mobile-carousel-dots-outset));
         gap: 0;
     }
 
@@ -2255,11 +2263,6 @@ section {
     /* Tighten section-to-section spacing without changing the hero or footer gaps. */
     section:not(.hero) + section {
         padding-top: calc(var(--spacing-lg) - var(--spacing-sm));
-    }
-
-    /* Reserve only the space used by pagination at the end of a section. */
-    section > .container > .carousel:last-child {
-        margin-bottom: var(--mobile-carousel-dots-outset);
     }
 }
 
