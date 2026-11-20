@@ -1922,6 +1922,12 @@ section {
 }
 
 @media (max-width: 768px) {
+    /* Section titles: scale with the viewport so every heading fits on one line
+       (longest titles like "PUBLISHED MUSIC" / "FEATURED GAMES" are the constraint) */
+    .section-title {
+        font-size: clamp(1.1rem, 6.4vw, 2.4rem);
+    }
+
     .nav-toggle {
         display: flex;
     }
