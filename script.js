@@ -692,14 +692,61 @@ function initCarousel(containerSelector) {
     
     containers.forEach(carouselContainer => {
         const track = carouselContainer.querySelector('.carousel-track');
-        const slides = carouselContainer.querySelectorAll('.carousel-slide');
+        let slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
         const prevBtn = carouselContainer.querySelector('.carousel-btn.prev');
         const nextBtn = carouselContainer.querySelector('.carousel-btn.next');
         const dotsContainer = carouselContainer.querySelector('.carousel-dots');
 
         if (slides.length === 0 || !prevBtn || !nextBtn || !dotsContainer) return;
 
+        const isResponsiveGroup = carouselContainer.classList.contains('responsive-group');
+        const isTestimonials = carouselContainer.classList.contains('testimonials-carousel');
+        const cardSelector = isTestimonials ? '.testimonial-card' : '.talk-card';
+        const wrapperClass = isTestimonials ? 'testimonials-slide-content' : 'talks-slide-content';
+
         let currentIndex = 0;
+
+        // On mobile, show one grouped card per slide; on desktop, keep the pairings.
+        function groupSlides() {
+            if (!isResponsiveGroup || !track) {
+                slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
+                return;
+            }
+
+            const cards = Array.from(track.querySelectorAll(cardSelector));
+            if (cards.length === 0) {
+                slides = Array.from(track.querySelectorAll('.carousel-slide'));
+                return;
+            }
+
+            const groupSize = window.matchMedia('(max-width: 768px)').matches ? 1 : 2;
+            const expectedGroups = Math.ceil(cards.length / groupSize);
+            const groupedCorrectly = slides.length === expectedGroups && slides.every((slide, index) => {
+                const expectedCards = Math.min(groupSize, cards.length - index * groupSize);
+                return slide.querySelectorAll(cardSelector).length === expectedCards;
+            });
+
+            if (!groupedCorrectly) {
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < cards.length; i += groupSize) {
+                    const slide = document.createElement('div');
+                    slide.className = 'carousel-slide';
+                    const content = document.createElement('div');
+                    content.className = wrapperClass;
+                    const end = Math.min(i + groupSize, cards.length);
+                    for (let j = i; j < end; j++) {
+                        content.appendChild(cards[j]);
+                    }
+                    slide.appendChild(content);
+                    fragment.appendChild(slide);
+                }
+                track.innerHTML = '';
+                track.appendChild(fragment);
+                currentIndex = 0;
+            }
+
+            slides = Array.from(track.querySelectorAll('.carousel-slide'));
+        }
 
         // Find the tallest slide and set all slides to that height
         function syncSlideHeights() {
@@ -723,22 +770,23 @@ function initCarousel(containerSelector) {
             });
         }
 
-        // Create dot indicators
-        slides.forEach((_, idx) => {
-            const dot = document.createElement('button');
-            dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-            dot.addEventListener('click', () => goToSlide(idx));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = carouselContainer.querySelectorAll('.carousel-dot');
+        // Create dot indicators for the current slide count
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (idx === currentIndex ? ' active' : '');
+                dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+                dot.addEventListener('click', () => goToSlide(idx));
+                dotsContainer.appendChild(dot);
+            });
+        }
 
         function updateCarousel() {
             slides.forEach((slide, idx) => {
                 slide.classList.toggle('active', idx === currentIndex);
             });
-            dots.forEach((dot, idx) => {
+            dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
                 dot.classList.toggle('active', idx === currentIndex);
             });
             // Stop music playback when switching album pages
@@ -814,12 +862,31 @@ function initCarousel(containerSelector) {
             });
         }
 
-        // Initialize heights and carousel
-        syncSlideHeights();
+        // Group cards responsively, then initialize carousel, dots, and heights
+        groupSlides();
+        buildDots();
         updateCarousel();
-        
+        syncSlideHeights();
+
         // Recalculate heights on window resize
         window.addEventListener('resize', syncSlideHeights);
+
+        // Regroup testimonials/talks when crossing the mobile breakpoint
+        if (isResponsiveGroup) {
+            const mobileQuery = window.matchMedia('(max-width: 768px)');
+            const handleGroupChange = () => {
+                groupSlides();
+                currentIndex = 0;
+                buildDots();
+                updateCarousel();
+                syncSlideHeights();
+            };
+            if (mobileQuery.addEventListener) {
+                mobileQuery.addEventListener('change', handleGroupChange);
+            } else if (mobileQuery.addListener) {
+                mobileQuery.addListener(handleGroupChange);
+            }
+        }
     });
 }
 
