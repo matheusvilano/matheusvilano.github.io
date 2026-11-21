@@ -232,6 +232,7 @@
                                     <p class="game-description">
                                         A Dungeons & Dragons tactical role-playing game that redefined the CRPG genre with unprecedented depth and polish.
                                     </p>
+                                    <button type="button" class="btn btn-outline game-details-trigger" aria-haspopup="dialog" aria-controls="game-details-dialog" hidden>View achievements and media</button>
                                     <ul class="achievements-list">
                                         <li>
                                             <span class="achievement-icon">✓</span>
@@ -303,6 +304,7 @@
                                     <p class="game-description">
                                         A story-driven puzzle-platformer game that pushed the boundaries of interactive storytelling and immersive audio design.
                                     </p>
+                                    <button type="button" class="btn btn-outline game-details-trigger" aria-haspopup="dialog" aria-controls="game-details-dialog" hidden>View achievements and media</button>
                                     <ul class="achievements-list">
                                         <li>
                                             <span class="achievement-icon">✓</span>
@@ -378,6 +380,7 @@
                                     <p class="game-description">
                                         A cinematic, choice-driven horror adventure remake where every decision can mean the difference between life and death for the young cast stranded on Blackwood Mountain.
                                     </p>
+                                    <button type="button" class="btn btn-outline game-details-trigger" aria-haspopup="dialog" aria-controls="game-details-dialog" hidden>View achievements and media</button>
                                     <ul class="achievements-list">
                                         <li>
                                             <span class="achievement-icon">✓</span>
@@ -435,6 +438,15 @@
                 <div class="carousel-dots"></div>
             </div>
         </div>
+        <dialog class="game-details-dialog" id="game-details-dialog" aria-labelledby="game-details-title">
+            <div class="game-details-header">
+                <h3 id="game-details-title"></h3>
+                <form method="dialog">
+                    <button type="submit" class="btn btn-outline" autofocus>Close</button>
+                </form>
+            </div>
+            <div class="game-details-body"></div>
+        </dialog>
     </section>
 
     <!-- Testimonials Section -->

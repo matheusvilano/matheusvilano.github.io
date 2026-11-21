@@ -685,6 +685,51 @@ function pauseAllAlbumPlayers() {
 }
 
 // ========================================
+// FEATURED GAMES: MOBILE DETAILS DIALOG
+// ========================================
+function initGameDetails(carousel, syncSlideHeights) {
+    const dialog = document.getElementById('game-details-dialog');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+
+    const title = dialog.querySelector('#game-details-title');
+    const body = dialog.querySelector('.game-details-body');
+    const mobile = window.matchMedia('(max-width: 768px)');
+    let restoreDetails;
+
+    carousel.querySelectorAll('.game-details-trigger').forEach(button => {
+        const info = button.closest('.game-info');
+        const content = info.parentElement;
+        const achievements = info.querySelector('.achievements-list');
+        const media = content.querySelector('.game-media');
+
+        button.addEventListener('click', () => {
+            if (!mobile.matches || dialog.open || restoreDetails) return;
+            title.textContent = info.querySelector('h3').textContent;
+            // Move the existing gallery so its controls and selection carry over.
+            body.append(achievements, media);
+            restoreDetails = () => {
+                info.append(achievements);
+                content.append(media);
+                if (mobile.matches) button.focus({ preventScroll: true });
+                else syncSlideHeights();
+            };
+            dialog.showModal();
+            body.scrollTop = 0;
+        });
+        button.hidden = false;
+    });
+
+    dialog.addEventListener('close', () => {
+        restoreDetails?.();
+        restoreDetails = null;
+    });
+
+    mobile.addEventListener('change', () => {
+        if (!mobile.matches && dialog.open) dialog.close();
+    });
+}
+
+// ========================================
 // CAROUSEL INITIALIZER (Reusable)
 // ========================================
 function initCarousel(containerSelector) {
@@ -701,6 +746,7 @@ function initCarousel(containerSelector) {
 
         const isResponsiveGroup = carouselContainer.classList.contains('responsive-group');
         const isTestimonials = carouselContainer.classList.contains('testimonials-carousel');
+        const isGames = carouselContainer.classList.contains('games-carousel');
         const cardSelector = isTestimonials ? '.testimonial-card' : '.talk-card';
         const wrapperClass = isTestimonials ? 'testimonials-slide-content' : 'talks-slide-content';
 
@@ -754,6 +800,9 @@ function initCarousel(containerSelector) {
             slides.forEach(slide => {
                 slide.style.height = 'auto';
             });
+
+            // Mobile game slides share a grid row instead of measured heights.
+            if (isGames && window.matchMedia('(max-width: 768px)').matches) return;
             
             // Find the maximum height
             let maxHeight = 0;
@@ -862,6 +911,15 @@ function initCarousel(containerSelector) {
             });
         }
 
+        if (track) {
+            const swipeHint = document.createElement('div');
+            swipeHint.className = 'carousel-swipe-hint';
+            swipeHint.textContent = isGames ? 'Swipe or tap a dot to browse games' : 'Swipe to browse';
+            carouselContainer.prepend(swipeHint);
+        }
+
+        if (isGames) initGameDetails(carouselContainer, syncSlideHeights);
+
         // Group cards responsively, then initialize carousel, dots, and heights
         groupSlides();
         buildDots();
@@ -943,4 +1001,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize game galleries
     document.querySelectorAll('[data-gallery]').forEach(initGallery);
 });
-
